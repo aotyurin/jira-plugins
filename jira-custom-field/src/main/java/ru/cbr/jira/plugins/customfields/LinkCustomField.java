@@ -1,13 +1,17 @@
 package ru.cbr.jira.plugins.customfields;
 
+import com.atlassian.jira.issue.Issue;
 import com.atlassian.jira.issue.customfields.impl.AbstractSingleFieldType;
 import com.atlassian.jira.issue.customfields.impl.FieldValidationException;
 import com.atlassian.jira.issue.customfields.manager.GenericConfigManager;
 import com.atlassian.jira.issue.customfields.persistence.CustomFieldValuePersister;
 import com.atlassian.jira.issue.customfields.persistence.PersistenceFieldType;
+import com.atlassian.jira.issue.fields.CustomField;
+import com.atlassian.jira.issue.fields.layout.field.FieldLayoutItem;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,6 +56,10 @@ public class LinkCustomField extends AbstractSingleFieldType<UrlDto> {
         return dtoUtils.parse(s);
     }
 
-
-
+    @Override
+    public Map<String, Object> getVelocityParameters(Issue issue, CustomField field, FieldLayoutItem fieldLayoutItem) {
+        Map<String, Object> velocityParameters = super.getVelocityParameters(issue, field, fieldLayoutItem);
+        velocityParameters.put("urlDtoUtils", dtoUtils);
+        return velocityParameters;
+    }
 }

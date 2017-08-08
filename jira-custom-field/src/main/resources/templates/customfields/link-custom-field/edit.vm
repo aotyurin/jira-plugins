@@ -1,7 +1,7 @@
 #customControlHeader ($action $customField.id $customField.name $fieldLayoutItem.required $displayParameters $auiparams)
 #set ($urlId = '_urlId')
 #set ($titleId = '_titleId')
-#set ($parseValue = $urlDtoUtils.convert($value))
+#set ($parseValue = $urlDtoUtils.parse($value))
 #set ($js = "AJS.$('#$customField.id').val(AJS.$('#$customField.id$urlId').val() + '%%' + AJS.$('#$customField.id$titleId').val())")
 
 <input class="text" id="$customField.id" name="$customField.id" type="hidden" value="$textutils.htmlEncode($!value)" />
