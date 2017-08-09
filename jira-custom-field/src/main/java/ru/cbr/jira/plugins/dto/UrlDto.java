@@ -1,7 +1,5 @@
-package ru.cbr.jira.plugins.customfields;
+package ru.cbr.jira.plugins.dto;
 
-
-import java.net.URL;
 
 public class UrlDto {
     private String url;

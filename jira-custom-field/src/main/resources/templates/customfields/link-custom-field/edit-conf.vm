@@ -1,0 +1,6 @@
+
+<form action="ViewCustomFields.jspa" method="post">
+    <label class="checkbox"><input type="checkbox"/> Open The Link Custom Field in new window</label><br/>
+    <input type="submit" name="OK" value="OK" />
+</form>
+

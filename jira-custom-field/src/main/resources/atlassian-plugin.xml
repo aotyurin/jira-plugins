@@ -25,4 +25,12 @@
     <resource name="view" type="velocity" location="/templates/customfields/link-custom-field/view.vm"/>
     <resource name="edit" type="velocity" location="/templates/customfields/link-custom-field/edit.vm"/>
   </customfield-type>
+  <webwork1 key="link-custom-field-config" name="Link Custom Field Configuration Action" i18n-name-key="link-custom-field-config.name">
+    <description key="link-custom-field-config.description">The Link Custom Field Configuration Action Plugin</description>
+    <actions>
+      <action name="ru.cbr.jira.plugins.customfields.config.LinkCustomFieldConfig" alias="LinkCustomFieldConfig">
+        <view name="input">/templates/customfields/link-custom-field/edit-conf.vm</view>
+      </action>
+    </actions>
+  </webwork1>
 </atlassian-plugin>
