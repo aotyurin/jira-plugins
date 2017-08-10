@@ -1,4 +1,4 @@
-package ut.ru.cbr.jira.plugins.customfields;
+package ru.cbr.jira.plugins.customfields;
 
 import com.atlassian.jira.issue.Issue;
 import com.atlassian.jira.issue.customfields.manager.GenericConfigManager;
@@ -12,11 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import ru.cbr.jira.plugins.customfields.LinkCustomField;
 
 import java.util.Map;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 /**
  * @since 3.5
@@ -30,7 +29,7 @@ public class LinkCustomFieldTest {
 
 
     @InjectMocks
-    private LinkCustomField linkCustomField;
+    private LinkCustomField linkCustomField = new LinkCustomField(customFieldValuePersister,genericConfigManager);
 
 
     @Before
